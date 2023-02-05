@@ -23,9 +23,25 @@ public class RomanNumeralsConverterTest {
     }
 
     @Test
-    public void convertTenToNumeral(){
+    public void convertNineToNumeral(){
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("IX", romanNumeralsConverter.convert(9));
+    }
+
+    @Test
+    public void convertTenToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("X", romanNumeralsConverter.convert(10));
+    }
+    @Test
+    public void convertUnitsAndTensToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("LII", romanNumeralsConverter.convert(52));
+    }
+    @Test
+    public void convertHundredsToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("CMXCIX", romanNumeralsConverter.convert(999));
     }
 
 }
