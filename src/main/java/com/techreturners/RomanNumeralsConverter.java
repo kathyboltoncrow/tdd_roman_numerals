@@ -2,7 +2,25 @@ package com.techreturners;
 
 public class RomanNumeralsConverter {
     public String convert(int number) {
+
         String romanNumeral = "";
+
+        if ((number <= 0) || (number > 3000)) {
+            throw new IllegalArgumentException(number + " is not in range (0,3000]");
+        }
+
+        //thousands position
+        switch ((number / 1000)){
+            case 1:
+                romanNumeral += "M";
+                break;
+            case 2:
+                romanNumeral += "MM";
+                break;
+            case 3:
+                romanNumeral += "MMM";
+                break;
+        }
 
         //hundreds position
         switch ((number % 1000) / 100){
@@ -68,7 +86,6 @@ public class RomanNumeralsConverter {
 
         //units position
         switch(number % 10) {
-
             case 1:
                 romanNumeral += "I";
                 break;
